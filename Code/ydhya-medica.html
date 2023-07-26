@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
+    <script src="build/runtime.b8e7bb04.js"></script>
+    <script src="build/app.74a74ff6.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="apple-mobile-web-app-title" content="TechTimer 2">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="TechTimer 2">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+
+
+    <script src="build/chart.e845e930.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>Ydhya</title>
+    <link rel="stylesheet" href="build/app.dd7cccf4.css">
+
+
+
+
+
+</head>
+
+<body data-title="Ydhya&#x20;&#x2013;&#x20;Health&#x20;Tracking"
+    class="hold-transition skin-blue skin-blue fixed sidebar-mini">
+    <div class="modal" id="remote_form_modal" tabindex="-1" role="dialog" aria-labelledby="remote_form_modal_label">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="remote_form_modal_label"></h4>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+
+        <header class="main-header">
+            <a href="user-main.html" class="logo">
+                <span class="logo-mini">
+                    <b>Y</b>
+                </span>
+                <span class="logo-lg">
+                    <b>Ydhya</b>
+                </span>
+            </a>
+
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="messages-menu " data-api="/api/timesheets/active"
+                            data-href="/api/timesheets/000/stop" data-icon="far fa-stop-circle" style="display:none">
+                            <div class="ddt-small ticktac-single ticktac-running">
+                                <div class="ticktac-stop">
+                                    <a accesskey="s" data-replacer="url" class="api-link"
+                                        href="/api/timesheets/000/stop"
+                                        data-event="kimai.timesheetStop kimai.timesheetUpdate" data-method="PATCH"
+                                        data-msg-error="timesheet.stop.error" data-msg-success="timesheet.stop.success">
+                                        <i class="far fa-stop-circle fa-2x"></i><span data-replacer="duration"
+                                            data-title="true" data-since="">00:00 h</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="messages-menu-empty" style="">
+                            <div class="ddt-small ticktac-single ticktac-stopped">
+                                <!--<a accesskey="n" href="user-crtime.html">
+                            <i class="fas fa-play fa-2x"></i> -->
+                                <!-- <span>00:00 h</span> -->
+                                </a>
+                            </div>
+                        </li>
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="dropdown-toggle ddt-small" data-toggle="dropdown">
+                                <!--    <i class="fas fa-redo-alt fa-2x"></i> -->
+                            </a>
+                            <ul class="dropdown-menu" data-api="/api/timesheets/recent?size=10"
+                                data-href="/api/timesheets/000/restart" data-icon="far fa-play-circle"
+                                data-template="%activity% in %project% for %customer%">
+                                <li class="header">Restart one of your last activities</li>
+                                <li>
+                                    <ul class="menu">
+                                    </ul>
+                                </li>
+                                <li class="footer"><a href="#">Show all records</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown user-menu">
+                            <a href="#" class="dropdown-toggle ddt-small" data-toggle="dropdown">
+                                <span class="avatar " style="background-color: #c0c0c0; color: #000000">
+                                    <span class="initials">YU</span>
+                                </span>
+
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">
+                                        <h4 class="control-sidebar-subheading">
+                                            <i class="fas fa-user"></i>
+                                            My profile
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h4 class="control-sidebar-subheading">
+                                            <i class="fas fa-user-edit"></i>
+                                            Edit
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h4 class="control-sidebar-subheading">
+                                            <i class="fas fa-cog"></i>
+                                            Preferences
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="logout.php">
+                                        <h4 class="control-sidebar-subheading">
+                                            <i class="fas fa-sign-out-alt"></i>
+                                            Logout
+                                        </h4>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="#">
+                                        <h4 class="control-sidebar-subheading">
+                                            <i class="fas fa-info-circle"></i>
+                                            About Ydhya
+                                        </h4>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <aside class="main-sidebar">
+            <section class="sidebar">
+
+
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li id="dashboard" class=" ">
+                        <a href="ydhya-dash.html">
+                            <i class="fas fa-user-circle"></i> <span>Personal Information</span>
+                        </a>
+
+                    </li>
+
+                    <li id="timesheet" class="  ">
+                        <a href="ydhya-med.html">
+                            <i class="fas fa-id-card"></i> <span>Major Illnesses</span>
+                        </a>
+
+                    </li>
+
+                    <li id="timesheet" class="  ">
+                        <a href="ydhya-po.html">
+                            <i class="fas fa-address-card"></i> <span>Previous Operations</span>
+                        </a>
+
+                    </li>
+
+                    <li id="timesheet" class=" active ">
+                        <a href="ydhya-medica.html">
+                            <i class="fas fa-medkit"></i> <span>Medications</span>
+                        </a>
+
+                    <li id="timesheet" class="  ">
+                        <a href="#">
+                            <i class="fas fa-eye"></i> <span>Visiualization</span>
+                        </a>
+
+                    <li id="timesheet" class="  ">
+                        <a href="#">
+                            <i class="fas fa-lightbulb"></i> <span>Diet & Exercise Plans</span>
+                        </a>
+                <li id="admin" class="header">
+                    <i class=""></i>
+                    <span>Administration</span>
+
+                </li>
+
+                </li>
+
+                <li id="timesheet" class="  ">
+                    <a href="ydhya-book.html">
+                        <i class="fas fa-file"></i> <span>Appointments</span>
+                    </a>
+
+                <li id="logout" class="  ">
+                    <a href="logout-ydhya.php">
+                        <i class="fas fa-sign-out-alt"></i> <span>Logout</span>
+                    </a>
+
+                </li>
+
+
+                </ul>
+            </section>
+        </aside>
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <h1>
+                    Medications
+                </h1>
+
+            </section>
+
+            <div class="no-print">
+            </div>
+
+            <section class="content dashboard">
+
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-24 col-xs-48">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="button" onclick="#">Add Another Record</button><br><br>
+                                <label for="name">Medication Name:</label>
+                                <input type="text" id="name" name="name" value="BP Medication"><br><br>
+                                <label for="Age">Since: </label>
+                                <input type="text" id="Age" name="Age" value="03/2020"><br><br>
+                                <label for="Age">Dosage: </label>
+                                <input type="text" id="Age" name="Age" value="150 mg"><br><br>
+                                <button type="button" onclick="#">Update</button> <button type="button"onclick="#">Delete</button><br><br>
+                                <label for="name">Medication Name:</label>
+                                <input type="text" id="name" name="name" value="Sugar Medication"><br><br>
+                                <label for="Age">Since: </label>
+                                <input type="text" id="Age" name="Age" value="07/2019"><br><br>
+                                <label for="Age">Dosage: </label>
+                                <input type="text" id="Age" name="Age" value="100 mg"><br><br>
+                                <button type="button" onclick="#">Update</button> <button type="button"
+                                    onclick="#">Delete</button><br><br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+</body>
+
+</html>
